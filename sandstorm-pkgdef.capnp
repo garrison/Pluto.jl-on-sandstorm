@@ -209,6 +209,7 @@ const pkgdef :Spk.PackageDefinition = (
   sourceMap = (
     searchPath = [
       ( sourcePath = "./fake", packagePath = ""),
+      ( sourcePath = "./oldspk", packagePath = ""),
     ]
   ),
   alwaysInclude = [
@@ -225,7 +226,7 @@ const myCommand :Spk.Manifest.Command = (
     (key = "PATH", value = "/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"),
     (key = "JULIA_PATH", value = "/usr/local/julia"),
     (key = "LD_LIBRARY_PATH", value = "/usr/local/julia/lib"),
-    (key = "HOME", value = "/var"),
+    (key = "HOME", value = "/home"),
     (key = "SANDSTORM", value = "1"),
     # Export SANDSTORM=1 into the environment, so that apps running within Sandstorm
     # can detect if $SANDSTORM="1" at runtime, switching UI and/or backend to use
