@@ -1,7 +1,14 @@
-push!(Base.DEPOT_PATH, "/pluto-depot")
+PLUTO_DEPOT = "/usr/local/pluto-depot"
+insert!(Base.DEPOT_PATH, 2, PLUTO_DEPOT)
+
 import Pkg
-Pkg.add(name="Pluto", version=v"0.15.1")
-Pkg.pin("Pluto")
+origdir = Pkg.envdir(PLUTO_DEPOT)
+envdir = Pkg.envdir()
+mkpath(envdir)
+for dir in readdir(origdir)
+    rm("$envdir/$dir"; force=true, recursive=true)
+    run(`cp -a $origdir/$dir $envdir/$dir`)
+end
 
 import Pluto
 Pluto.run(
