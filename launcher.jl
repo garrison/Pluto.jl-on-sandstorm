@@ -10,6 +10,7 @@ ENV["JULIA_DEPOT_PATH"] = ":$PLUTO_DEPOT"
 # environment to the first-listed depot, which lives on /var because it must be
 # writable by the user.
 import Pkg
+Pkg.activate("pluto-env", shared=true)
 origdir = Pkg.envdir(PLUTO_DEPOT)
 envdir = Pkg.envdir()
 mkpath(envdir)
