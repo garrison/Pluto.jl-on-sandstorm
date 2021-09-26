@@ -224,7 +224,6 @@ const myCommand :Spk.Manifest.Command = (
   environ = [
     # Note that this defines the *entire* environment seen by your app.
     (key = "PATH", value = "/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"),
-    (key = "JULIA_PATH", value = "/usr/local/julia"),
     (key = "LD_LIBRARY_PATH", value = "/usr/local/julia/lib"),
     (key = "HOME", value = "/home"),
     (key = "SANDSTORM", value = "1"),
