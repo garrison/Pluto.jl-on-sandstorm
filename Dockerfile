@@ -2,9 +2,9 @@ FROM zenhack/sandstorm-http-bridge:276 as bridge
 
 FROM julia:1.6.2
 
-# We're going to set HOME=/home, so let's make it point to /var, which
-# is the only writable location inside a grain.
-RUN rmdir /home && ln -fs /var /home
+# /var is the only writable location inside a grain.
+RUN rmdir /home
+ENV HOME=/var
 
 # We wish to install Pluto in its own package depot.  We set
 # JULIA_DEPOT_PATH to have as its first entry a system-wide depot, as
