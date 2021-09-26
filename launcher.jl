@@ -1,10 +1,5 @@
 # The Dockerfile installs Pluto in a system-wide depot.
-PLUTO_DEPOT = "/usr/local/pluto-depot"
-# First we tell the current process to use this depot.
-push!(Base.DEPOT_PATH, PLUTO_DEPOT)
-# Second, we tell all subprocesses (in the sense of Distributed, which Pluto
-# uses) to use this depot as well.
-ENV["JULIA_DEPOT_PATH"] = ":$PLUTO_DEPOT"
+PLUTO_DEPOT = Base.DEPOT_PATH[2]
 
 # For each package environment in our custom depot, we force-copy the
 # environment to the first-listed depot, which lives on /var because it must be
