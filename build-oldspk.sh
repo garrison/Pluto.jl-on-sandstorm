@@ -10,8 +10,8 @@ fi
 rm -rf oldspk
 
 TMPDIR=$(mktemp -d -t pluto-sandstorm-build.XXXX)
-export IIDFILE=$TMPDIR/iidfile
-export CIDFILE=$TMPDIR/cidfile
+IIDFILE=$TMPDIR/iidfile
+CIDFILE=$TMPDIR/cidfile
 
 docker build --rm=false --iidfile=$IIDFILE .
 docker create --cidfile=$CIDFILE `cat $IIDFILE`
