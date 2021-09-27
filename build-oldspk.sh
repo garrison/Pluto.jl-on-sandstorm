@@ -14,9 +14,9 @@ IIDFILE=$TMPDIR/iidfile
 CIDFILE=$TMPDIR/cidfile
 
 docker build --rm=false --iidfile=$IIDFILE .
-docker create --cidfile=$CIDFILE `cat $IIDFILE`
+docker create --cidfile=$CIDFILE $(cat $IIDFILE)
 mkdir -p oldspk
-docker export `cat $CIDFILE` | tar x -C oldspk
-docker rm `cat $CIDFILE`
+docker export $(cat $CIDFILE) | tar x -C oldspk
+docker rm $(cat $CIDFILE)
 
 rm -rf $TMPDIR
