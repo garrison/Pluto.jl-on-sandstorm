@@ -13,7 +13,9 @@ least for now.  Like [dotnet-docker-spk], we need to work around
 `uv_exepath`).  The following command builds the package and provides
 it to the local Sandstorm development instance:
 
-    ./build-oldspk.sh && spk dev
+```shell script
+./build-oldspk.sh && spk dev
+```
 
 [docker-spk]: https://github.com/zenhack/docker-spk
 [dotnet-docker-spk]: https://github.com/zenhack/dotnet-docker-spk
