@@ -1,6 +1,6 @@
 FROM zenhack/sandstorm-http-bridge:276 as bridge
 
-FROM julia:1.6.2
+FROM julia:1.6.3
 
 # /var is the only writable location inside a grain.
 RUN rmdir /home
